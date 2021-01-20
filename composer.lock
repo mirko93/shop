@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a16c3c541bd99241cab1c21ce8e83ac",
+    "content-hash": "7761fb37c2c40cd6f15ee9f65b83c2ad",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -117,6 +117,68 @@
                 }
             ],
             "time": "2020-08-18T23:57:15+00:00"
+        },
+        {
+            "name": "darthsoup/shoppingcart",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/darthsoup/laravel-shoppingcart.git",
+                "reference": "3fe1b8c5c707abcfd6ded99c838abc558787eeb5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/darthsoup/laravel-shoppingcart/zipball/3fe1b8c5c707abcfd6ded99c838abc558787eeb5",
+                "reference": "3fe1b8c5c707abcfd6ded99c838abc558787eeb5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "~6.0|~7.0|~8.0",
+                "illuminate/session": "~6.0|~7.0|~8.0",
+                "illuminate/support": "~6.0|~7.0|~8.0",
+                "php": "^7.2.5|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.3",
+                "orchestra/testbench": "5.x",
+                "phpunit/phpunit": "^8.5.8|^9.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DarthSoup\\Cart\\CartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "DarthSoup\\Cart\\Facades\\Cart"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DarthSoup\\Cart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Krummmnacker",
+                    "email": "kevin.krummnacker@gmail.com"
+                }
+            ],
+            "description": "Laravel 5 Shoppingcart",
+            "keywords": [
+                "laravel",
+                "shoppingcart"
+            ],
+            "support": {
+                "issues": "https://github.com/darthsoup/laravel-shoppingcart/issues",
+                "source": "https://github.com/darthsoup/laravel-shoppingcart/tree/2.1.0"
+            },
+            "time": "2020-12-31T00:33:41+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
