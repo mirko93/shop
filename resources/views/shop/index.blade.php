@@ -10,21 +10,25 @@
         <h2>Category</h2>
 
         <ul>
-            <a href="#">
-                <li>Laptop</li>
-            </a>
-            <a href="#">
-                <li>TV</li>
-            </a>
-            <a href="#">
-                <li>Game</li>
-            </a>
+            @foreach ($categories as $category)
+                <li><a href="{{ route('shop.index', ['category' => $category->slug]) }}">{{ $category['name'] }}</a></li>
+            @endforeach
         </ul>
+    </div>
+
+    <div>
+        <h2>{{ $categoryName }}</h2>
+
+        <div>
+            <strong>Price:</strong>
+            <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'low_to_high']) }}">low to high</a>
+            <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'high_to_low']) }}">high to low</a>
+        </div>
     </div>
 
     {{-- products --}}
     <div class="products text-center">
-        @foreach ($products as $product)
+        @forelse ($products as $product)
             <div class="product">
                 <a href="{{ route('shop.show', $product->slug) }}">
                     <img src="{{ asset('img/products/' . $product->slug . '.jpg') }}" alt="product" width="300">
@@ -36,7 +40,11 @@
 
                 <div class="product-price">{{ $product->presentPrice() }} RSD</div>
             </div>
-        @endforeach
+        @empty
+            <div>No items found.</div>
+        @endforelse
+
+        {{ $products->appends(request()->input())->links() }}
     </div>
 </div>
 @endsection
